@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>MBR Foods Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/static/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+	<script src="static/script.js"></script>
+</head>
+<body>
+	<div ng-app='storeApp'>
+		<header>
+			<img src="/static/mbr.png">
+		</header>
+		<a href="#/">Dashboard</a> | <a href="#/products">Products</a> | <a href="#/orders">Orders</a> | <a href="#/customers">Customers</a>
+		<div ng-view="">
+		</div>
+	</div>
+</body>
+</html>

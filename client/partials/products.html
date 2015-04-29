@@ -1,0 +1,32 @@
+<div ng-controller="productsController">
+	<h1>Products</h1>
+	<div class="row">
+		<div class="three columns">
+			<form>
+				<input type="text" placeholder="search..." ng-model="filter_name">
+				<input type="submit" value="Filter">
+			</form>
+			<h5>Add a new product</h5>
+			<form>
+				<label>Name:</label>
+				<input type="text" ng-model="newProduct.name">
+				<label>Image (url):</label>
+				<input type="text" ng-model="newProduct.imgurl">
+				<label>Description:</label>
+				<textarea ng-model="newProduct.description"></textarea>
+				<label>Initial Quantity:</label>
+				<input type="number" ng-model="newProduct.quantity" min="1" max="100">
+				<input type="submit" class="button-primary" ng-click="addProduct()">
+			</form>
+		</div>
+		<div class="nine columns">
+			<div class ="dview" ng-repeat="product in products | filter:filter_name">
+				<img src="{{product.imgurl}}" style="width:100px; height:100px;">
+				<div>
+					<p>{{product.name}}</p>
+					<p>({{product.quantity}} left)</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

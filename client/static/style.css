@@ -1,0 +1,18 @@
+header{
+	height: 60px;
+	background-color: black;
+	text-align: center;
+}
+header img{
+	height: 55px;
+	width: auto;
+	margin-top: 5px;
+}
+.dview{
+	display: inline-block;
+	margin: 0px 20px 20px 0px;
+}
+.dview p{
+	margin-bottom: 0;
+	text-align: center;
+}

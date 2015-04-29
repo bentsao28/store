@@ -1,0 +1,37 @@
+<div ng-controller="dashboardController">
+	<h1>MBR FOODS Dashboard</h1>
+	<div class="row">
+		<div class="two columns">
+			<form>
+				<input type="text" placeholder="search">
+				<input type="submit" value="Filter">
+			</form>
+		</div>
+		<div class="ten columns">
+			<div class ="dview" ng-repeat="product in products | limitTo: plimit">
+				<img src="{{product.imgurl}}" style="width:100px; height:100px;">
+				<div>
+					<p>{{product.name}}</p>
+					<p>({{product.quantity}} left)</p>
+				</div>
+			</div>
+			<div>
+				<span id="showp"></span>
+				<a href="" ng-click="showMoreP()">show more...</a>
+				<a href="" ng-click="showLessP()">show less...</a>
+			</div>
+			<h5>Recent Orders</h5>
+			<div class="drecent" ng-repeat="order in orders | limitTo: olimit | orderBy:'-date'">
+				<p>{{order.name}} purchased {{order.quantity}} {{order.product}}</p>
+			</div>
+			<a href="" ng-click="showMoreO()">show more...</a>
+			<a href="" ng-click="showLessO()">show less...</a>
+			<h5>Recent Customers</h5>
+			<div class="dcustomers" ng-repeat="customer in customers | limitTo: climit | orderBy:'-date'">
+				<p>{{customer.name}} joined the store...</p>
+			</div>
+			<a href="" ng-click="showMoreC()">show more...</a>
+			<a href="" ng-click="showLessC()">show less...</a>
+		</div>
+	</div>
+</div>
